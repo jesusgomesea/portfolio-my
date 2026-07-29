@@ -28,11 +28,12 @@ const siteData = {
   paisagens: [
     { src: "images/paisagens/paisagens01.jpg", alt: "Flor de buganvília rosa sobre muro de tijolos, com vegetação ao fundo", caption: "55mm · f/5.6 · 1/800s" },
     { src: "images/paisagens/paisagens02.jpg", alt: "Pimentas malagueta vermelhas em um pé de pimenta", caption: "135mm · f/5.6 · 1/100s" },
-    { src: "images/paisagens/paisagens03.jpg", alt: "Galhos com folhas verdes e pequenas flores, luz solar filtrada entre as folhas", caption: "" },
-    { src: "", alt: "paisagem 04", caption: "18mm · f/13 · 1/30s" }
+    { src: "images/paisagens/paisagens03.jpg", alt: "Cachorro salsicha farejando vegetação ao ar livre, luz solar entre as folhas", caption: "55mm · f/5.6 · 1/160s" },
+    { src: "images/paisagens/paisagens04.jpg", alt: "Frutas vermelha e verde penduradas em galho com folhas, céu desfocado ao fundo", caption: "135mm · f/5.6 · 1/100s" },
+    { src: "images/paisagens/paisagens05.jpg", alt: "Torre de telecomunicação vista entre galhos e folhas, contra o céu azul", caption: "55mm · f/5.6 · 1/250s" }
   ],
   albuns: [
-    { cover: "", title: "Nome do álbum ou casal", desc: "Uma linha curta contando do que se trata esse trabalho.", link: "#" },
+    { cover: "images/albuns/niver/niver06.jpg", title: "Aniversário de 80 anos", desc: "Uma tarde em família, com bolo, flores, abraços e recados de carinho.", link: "#" },
     { cover: "", title: "Nome do projeto pessoal", desc: "Uma linha curta contando do que se trata esse trabalho.", link: "#" }
   ]
 };

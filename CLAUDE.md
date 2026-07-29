@@ -25,5 +25,6 @@ Netlify, direto da raiz do repo (`netlify.toml` define `publish = "."`, sem buil
 
 ## Gaps conhecidos (ver README.md pra detalhe)
 
-- `images/*` (exceto `sobre/`) só tem `LEIA-ME.txt`, nenhuma foto real ainda — todo `src` em `data.js` está vazio (retratos, casamentos, paisagens, destaques, álbuns).
+- `retratos`, `casamentos`, `destaques` ainda sem foto real (`src` vazio em `data.js`). `paisagens` (5 fotos) e o álbum "Aniversário de 80 anos" já têm foto real.
+- Álbum "Aniversário de 80 anos" (`images/albuns/niver/`) tem 6 fotos processadas, mas o site só mostra 1 capa por álbum — sem página/galeria por álbum ainda (as outras 5 ficam na pasta esperando essa etapa futura).
 - Meta `og:image` ainda não definida (sem foto de destaque real pra usar de preview em redes sociais) — adicionar em `index.html` quando houver.
