@@ -11,11 +11,15 @@ const galleryData = {
 
 const plusIcon = `<svg class="tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`;
 
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 function renderGallery(containerId, galleryKey, items, ratio, colorClass) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = items.map((item, i) => `
-    <button type="button" class="photo-tile ${colorClass}" style="--ar:${ratio};" data-gallery="${galleryKey}" data-index="${i}" aria-label="Ver ${item.alt || "foto"}">
+    <button type="button" class="photo-tile ${colorClass}" style="--ar:${ratio};" data-gallery="${galleryKey}" data-index="${i}" aria-label="Ver ${escapeHtml(item.alt || "foto")}">
       ${plusIcon}
       <span class="tile-number">${String(i + 1).padStart(2, "0")}</span>
     </button>
@@ -26,10 +30,10 @@ function renderAlbums(containerId, items) {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = items.map((a) => {
-    const cover = a.cover ? `<img src="${a.cover}" alt="${a.title}" loading="lazy">` : "capa do álbum";
+    const cover = a.cover ? `<img src="${a.cover}" alt="${escapeHtml(a.title)}" loading="lazy">` : "capa do álbum";
     return `<div class="album-card"><div class="album-cover">${cover}</div><div class="album-body">
-      <p class="album-title">${a.title}</p>
-      <p class="album-desc">${a.desc}</p>
+      <p class="album-title">${escapeHtml(a.title)}</p>
+      <p class="album-desc">${escapeHtml(a.desc)}</p>
       <a href="${a.link || "#"}" class="album-link">ver álbum →</a>
     </div></div>`;
   }).join("");
@@ -40,8 +44,8 @@ function renderHeroCarousel(containerId, items) {
   if (!container || !items.length) return;
   container.innerHTML = items.map((item) => {
     const media = item.src
-      ? `<img src="${item.src}" alt="${item.alt || ""}">`
-      : `<div class="hero-ph">${item.alt || ""}</div>`;
+      ? `<img src="${item.src}" alt="${escapeHtml(item.alt || "")}">`
+      : `<div class="hero-ph">${escapeHtml(item.alt || "")}</div>`;
     return `<div class="hero-slide">${media}</div>`;
   }).join("");
 }
@@ -115,8 +119,8 @@ function renderLightboxContent() {
   const mediaEl = document.getElementById("lightboxMedia");
   const captionEl = document.getElementById("lightboxCaption");
   mediaEl.innerHTML = item.src
-    ? `<img src="${item.src}" alt="${item.alt || ""}" loading="lazy">`
-    : `<div class="lightbox-ph">${item.alt || ""}</div>`;
+    ? `<img src="${item.src}" alt="${escapeHtml(item.alt || "")}" loading="lazy">`
+    : `<div class="lightbox-ph">${escapeHtml(item.alt || "")}</div>`;
   captionEl.textContent = item.caption || "";
 }
 
@@ -189,6 +193,7 @@ const navLinks = document.getElementById("navLinks");
 navToggle.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
   navToggle.setAttribute("aria-expanded", isOpen);
+  navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
 });
 navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {

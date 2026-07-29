@@ -28,4 +28,4 @@ Netlify, direto da raiz do repo (`netlify.toml` define `publish = "."`, sem buil
 - `images/*` só tem `LEIA-ME.txt`, nenhuma foto real ainda — todo `src` em `data.js` está vazio.
 - Seção Sobre: foto de perfil comentada em `index.html`, texto biográfico com placeholder `[Escreva aqui...]`.
 - Footer: `[sua cidade, estado]` sem preencher.
-- Contato: Instagram e WhatsApp ainda são `href="#"`.
+- Meta `og:image` ainda não definida (sem foto real pra usar de preview em redes sociais) — adicionar em `index.html` quando houver foto de destaque.
