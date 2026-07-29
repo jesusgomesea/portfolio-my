@@ -26,9 +26,9 @@ const siteData = {
     { src: "", alt: "casamento 04", caption: "90mm · f/5 · 1/250s" }
   ],
   paisagens: [
-    { src: "", alt: "paisagem 01", caption: "18mm · f/9 · 1/60s" },
-    { src: "", alt: "paisagem 02", caption: "24mm · f/11 · 1/40s" },
-    { src: "", alt: "paisagem 03", caption: "20mm · f/8 · 1/100s" },
+    { src: "images/paisagens/paisagens01.jpg", alt: "Flor de buganvília rosa sobre muro de tijolos, com vegetação ao fundo", caption: "55mm · f/5.6 · 1/800s" },
+    { src: "images/paisagens/paisagens02.jpg", alt: "Pimentas malagueta vermelhas em um pé de pimenta", caption: "135mm · f/5.6 · 1/100s" },
+    { src: "images/paisagens/paisagens03.jpg", alt: "Galhos com folhas verdes e pequenas flores, luz solar filtrada entre as folhas", caption: "" },
     { src: "", alt: "paisagem 04", caption: "18mm · f/13 · 1/30s" }
   ],
   albuns: [
