@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eluan Jesus — Fotografia</title>
+<meta name="description" content="Portfólio fotográfico de Eluan Jesus — retratos, casamentos, eventos e paisagens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#home" class="nav-logo">Eluan Jesus</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#retratos">Retratos</a>
+    <a href="#casamentos">Casamentos &amp; eventos</a>
+    <a href="#paisagens">Paisagens</a>
+    <a href="#albuns">Álbuns</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-carousel" id="heroCarousel"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">retratos — casamentos — paisagens</p>
+    <h1>Eluan Jesus</h1>
+    <p class="hero-tagline">Um olhar, três histórias.</p>
+    <a href="#retratos" class="hero-cta">ver o trabalho ↓</a>
+  </div>
+  <div class="hero-meta">
+    <span id="heroCaption"></span>
+    <span id="heroCounter"></span>
+  </div>
+  <div class="hero-progress-track"><div class="hero-progress" id="heroProgress"></div></div>
+</section>
+
+<section id="retratos" class="reveal">
+  <span class="section-label label-gold">Retratos</span>
+  <p class="section-intro">Um olhar próximo, sem pressa.</p>
+  <div class="gallery portrait-grid" id="retratos-gallery"></div>
+</section>
+
+<section id="casamentos" class="reveal">
+  <span class="section-label label-rose">Casamentos &amp; eventos</span>
+  <p class="section-intro">Os instantes que não se repetem.</p>
+  <div class="gallery wide-grid" id="casamentos-gallery"></div>
+</section>
+
+<section id="paisagens" class="reveal">
+  <span class="section-label label-indigo">Paisagens</span>
+  <p class="section-intro">Onde a luz conta a história.</p>
+  <div class="gallery land-grid" id="paisagens-gallery"></div>
+</section>
+
+<section id="albuns" class="reveal">
+  <span class="section-label label-neutral">Álbuns &amp; projetos</span>
+  <p class="section-intro">Trabalhos completos, contados como sequência — não como grade solta.</p>
+  <div class="film-edge" aria-hidden="true"></div>
+  <div class="albums-row" id="albuns-row"></div>
+  <div class="film-edge" aria-hidden="true"></div>
+</section>
+
+<section id="sobre" class="reveal">
+  <span class="section-label label-neutral">Sobre</span>
+  <div class="about">
+    <!-- Troque esta div por: <img src="images/sobre/perfil.jpg" alt="Eluan Jesus"> -->
+    <div class="about-photo" role="img" aria-label="Foto de perfil (a substituir)"></div>
+    <div class="about-text">
+      <p>[Escreva aqui sua história: como você começou na fotografia, o que te move a registrar retratos, casamentos e paisagens, e o que as pessoas podem esperar ao trabalhar com você.]</p>
+      <p>Um olhar próximo e sem pressa — buscando o instante certo antes de qualquer técnica.</p>
+      <div class="gear-list">Nikon D3200<br>Lentes AF-S zoom<br>Equipamento de estúdio</div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="reveal">
+  <span class="section-label label-neutral">Contato</span>
+  <p class="section-intro">Vamos conversar sobre o seu projeto.</p>
+  <div class="contact-links">
+    <a href="mailto:contato@eluanjesus.com.br">contato@eluanjesus.com.br</a>
+    <a href="#">@eluanjesus.foto</a>
+    <a href="#">WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Eluan Jesus</span>
+  <span>[sua cidade, estado]</span>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização da foto" hidden>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <div class="lightbox-stage">
+    <div class="lightbox-media" id="lightboxMedia"></div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+  <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

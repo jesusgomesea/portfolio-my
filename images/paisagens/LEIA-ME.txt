@@ -1,0 +1,1 @@
+Coloque aqui as fotos de paisagens (ex: 01.jpg, 02.jpg...). Depois, aponte o campo 'src' de cada item em data.js para o caminho do arquivo.

@@ -1,0 +1,1 @@
+Coloque aqui 4 a 6 fotos horizontais e de forte impacto visual para o carrossel do topo do site (ex: 01.jpg, 02.jpg...). Depois, aponte o campo 'src' de cada item em data.js (array 'destaques') para o caminho do arquivo.

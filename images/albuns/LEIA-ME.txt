@@ -1,0 +1,1 @@
+Crie uma subpasta por álbum (ex: images/albuns/ana-e-pedro/) com a capa e as fotos do álbum. Aponte o campo 'cover' do álbum correspondente em data.js.
