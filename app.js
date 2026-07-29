@@ -18,12 +18,16 @@ function escapeHtml(str) {
 function renderGallery(containerId, galleryKey, items, ratio, colorClass) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.innerHTML = items.map((item, i) => `
-    <button type="button" class="photo-tile ${colorClass}" style="--ar:${ratio};" data-gallery="${galleryKey}" data-index="${i}" aria-label="Ver ${escapeHtml(item.alt || "foto")}">
-      ${plusIcon}
-      <span class="tile-number">${String(i + 1).padStart(2, "0")}</span>
+  container.innerHTML = items.map((item, i) => {
+    const inner = item.src
+      ? `<img src="${item.src}" alt="${escapeHtml(item.alt || "")}" loading="lazy">`
+      : `${plusIcon}<span class="tile-number">${String(i + 1).padStart(2, "0")}</span>`;
+    return `
+    <button type="button" class="photo-tile ${item.src ? "has-photo" : colorClass}" style="--ar:${ratio};" data-gallery="${galleryKey}" data-index="${i}" aria-label="Ver ${escapeHtml(item.alt || "foto")}">
+      ${inner}
     </button>
-  `).join("");
+  `;
+  }).join("");
 }
 
 function renderAlbums(containerId, items) {

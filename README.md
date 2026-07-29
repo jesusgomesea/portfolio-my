@@ -10,7 +10,7 @@
 
 ## Paleta e interação da grade
 
-As cores mudaram para uma paleta "hora dourada": dourado (Retratos), terracota (Casamentos & Eventos) e azul-ardósia (Paisagens) — tons de `style.css`, seção `:root`. Cada foto da grade aparece como um bloco colorido com um "+"; a foto de verdade só aparece ao clicar, numa janela (lightbox) com legenda, setas pra navegar e fecha com Esc ou clicando fora.
+As cores mudaram para uma paleta "hora dourada": dourado (Retratos), terracota (Casamentos & Eventos) e azul-ardósia (Paisagens) — tons de `style.css`, seção `:root`. Foto sem `src` em `data.js` aparece como bloco colorido com um "+" (placeholder); foto com `src` já aparece de verdade na grade. Clicar em qualquer uma abre o lightbox, com legenda, setas pra navegar e fecha com Esc ou clicando fora.
 
 ## Carrossel do topo (hero)
 

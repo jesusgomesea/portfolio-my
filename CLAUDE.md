@@ -12,7 +12,7 @@ Site estático puro. Sem framework, sem build step, sem dependências.
 
 ## Convenções
 
-- Cada foto em `data.js` é `{ src, alt, caption }`. `src` vazio = mostra placeholder colorido (bloco com "+"); nunca deixar `src` apontando pra arquivo inexistente.
+- Cada foto em `data.js` é `{ src, alt, caption }`. `src` vazio = placeholder colorido (bloco com "+"); `src` preenchido = mostra a foto direto na grade (thumbnail), clique abre no lightbox em tamanho maior. Nunca deixar `src` apontando pra arquivo inexistente.
 - `alt` precisa ser descrição real (acessibilidade/SEO), não texto genérico tipo "retrato 01".
 - `caption` é opcional, dado técnico tipo "50mm · f/5.6 · 1/200s".
 - Fotos antes de subir: redimensionar pra no máx ~2000px lado maior, JPEG ~80–85% ou WebP. Lote via ImageMagick: `mogrify -resize 2000x2000\> -quality 85 *.jpg`.
