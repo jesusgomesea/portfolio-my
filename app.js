@@ -33,14 +33,28 @@ function renderGallery(containerId, galleryKey, items, ratio, colorClass) {
 function renderAlbums(containerId, items) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.innerHTML = items.map((a) => {
+  container.innerHTML = items.map((a, i) => {
     const cover = a.cover ? `<img src="${a.cover}" alt="${escapeHtml(a.title)}" loading="lazy">` : "capa do álbum";
-    return `<div class="album-card"><div class="album-cover">${cover}</div><div class="album-body">
+    const hasGallery = Array.isArray(a.photos) && a.photos.length > 0;
+    if (hasGallery) galleryData[`album-${i}`] = a.photos;
+    const coverEl = hasGallery
+      ? `<button type="button" class="album-cover-btn" data-gallery="album-${i}" data-index="0" aria-label="Ver fotos de ${escapeHtml(a.title)}"><div class="album-cover">${cover}</div></button>`
+      : `<div class="album-cover">${cover}</div>`;
+    const linkEl = hasGallery
+      ? `<button type="button" class="album-link" data-gallery="album-${i}" data-index="0">ver álbum →</button>`
+      : `<a href="${a.link || "#"}" class="album-link">ver álbum →</a>`;
+    return `<div class="album-card">${coverEl}<div class="album-body">
       <p class="album-title">${escapeHtml(a.title)}</p>
       <p class="album-desc">${escapeHtml(a.desc)}</p>
-      <a href="${a.link || "#"}" class="album-link">ver álbum →</a>
+      ${linkEl}
     </div></div>`;
   }).join("");
+
+  container.querySelectorAll("[data-gallery^='album-']").forEach((el) => {
+    el.addEventListener("click", () => {
+      openLightbox(el.dataset.gallery, Number(el.dataset.index), el);
+    });
+  });
 }
 
 function renderHeroCarousel(containerId, items) {

@@ -33,7 +33,20 @@ const siteData = {
     { src: "images/paisagens/paisagens05.jpg", alt: "Torre de telecomunicação vista entre galhos e folhas, contra o céu azul", caption: "55mm · f/5.6 · 1/250s" }
   ],
   albuns: [
-    { cover: "images/albuns/niver/niver06.jpg", title: "Aniversário de 80 anos", desc: "Uma tarde em família, com bolo, flores, abraços e recados de carinho.", link: "#" },
+    {
+      cover: "images/albuns/niver/niver06.jpg",
+      title: "Aniversário de 80 anos",
+      desc: "Uma tarde em família, com bolo, flores, abraços e recados de carinho.",
+      link: "#",
+      photos: [
+        { src: "images/albuns/niver/niver01.jpg", alt: "Idosa sorridente segurando buquê de rosas vermelhas, em frente a cortina com luzinhas", caption: "55mm · f/5.6 · 1/30s" },
+        { src: "images/albuns/niver/niver02.jpg", alt: "Criança soprando velas em formato '80' no colo da avó, em festa de aniversário", caption: "55mm · f/5.6 · 1/60s" },
+        { src: "images/albuns/niver/niver03.jpg", alt: "Doces com cereja em bandeja de vidro, mesa de festa ao fundo", caption: "44mm · f/5.3 · 1/40s" },
+        { src: "images/albuns/niver/niver04.jpg", alt: "Família em abraço, criança segurando cartaz \"Vivemos seguindo o seu exemplo\"", caption: "55mm · f/5.6 · 1/30s" },
+        { src: "images/albuns/niver/niver05.jpg", alt: "Duas mulheres sorrindo e se abraçando, com balões dourados ao fundo", caption: "34mm · f/5 · 1/50s" },
+        { src: "images/albuns/niver/niver06.jpg", alt: "Grupo de família posando em festa de aniversário de 80 anos, segurando cartazes com mensagens", caption: "18mm · f/4.5 · 1/30s" }
+      ]
+    },
     { cover: "", title: "Nome do projeto pessoal", desc: "Uma linha curta contando do que se trata esse trabalho.", link: "#" }
   ]
 };
